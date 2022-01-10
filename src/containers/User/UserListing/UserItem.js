@@ -19,6 +19,7 @@ function UserItem(props) {
                     imageWidth={RfH(60)}
                     imageHeight={RfH(60)}
                     imageResizeMode={'contain'}
+                    submitFunction={() => handleOpen(item)}
                 />
                 <View style={{ marginLeft: RfW(10), flex: 1 }}>
                     <View style={styles.inRow}>

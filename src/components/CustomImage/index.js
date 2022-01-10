@@ -8,6 +8,7 @@ import Images from '../../theme/Images';
 
 function CustomImage(props) {
   const {
+    submitFunction,
     image,
     imageHeight,
     styling,
@@ -23,7 +24,11 @@ function CustomImage(props) {
 
   return (
     <View style={{}}>
-      <TouchableOpacity activeOpacity={0.8} style={[containerStyling]}>
+      <TouchableOpacity
+        disabled={!submitFunction}
+        onPress={submitFunction}
+        activeOpacity={0.8}
+        style={[containerStyling]}>
         {loading && (
           <View
             style={[
@@ -69,6 +74,7 @@ CustomImage.propTypes = {
   imageResizeMode: PropTypes.string,
   placeHolderImage: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   styling: PropTypes.any,
+  submitFunction: PropTypes.func,
 };
 
 CustomImage.defaultProps = {
@@ -81,6 +87,7 @@ CustomImage.defaultProps = {
   containerStyling: {},
   placeHolderImage: Images.user,
   displayLoader: false,
+  submitFunction: null,
 };
 
 export default CustomImage;
