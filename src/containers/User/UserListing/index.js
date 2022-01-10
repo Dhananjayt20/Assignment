@@ -43,7 +43,7 @@ function UserListing() {
   return (
     <View style={styles.mainContainer}>
       <Header
-        titleText={'User List'}
+        titleText={'Users List'}
         rightButtonImage={Images.edit_user}
         onRightButtonClickHandler={() => { }}
         isBackButtonVisible={false}
